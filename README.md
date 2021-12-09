@@ -17,7 +17,16 @@ A keystone activity
 
 # How?
 
+Firstly, you can try the App via Heroku:
+https://sleepdev.herokuapp.com
 
+Try: 
++ **Log _in_**
++ **Start** a sleep timer
++ **Stop** the timer
++ **Log _out_**.
++ **Log _back in_**
++ ***Confirm*** your "sleep" session was recorded.
 
 
 # _Tutorial_
@@ -47,7 +56,7 @@ Anyone who knows basic programming
 should be able to follow along.
 
 
-
+## Create New Phoenix App
 
 ```sh
 mix phx.new app --no-mailer --no-dashboard
@@ -58,11 +67,42 @@ without the mailer (email) or live dashboard
 but with a database and `LiveView` support.
 
 
-To start your Phoenix server:
+When you see the prompt asking you 
+to fetch and install the dependencies:
+
+```
+Fetch and install dependencies? [Yn]
+```
+
+Type `y` followed by the `Enter` key:
+
+You should then see:
+
+```
+* running mix deps.get
+* running mix deps.compile
+```
+
+To start the Phoenix server:
 
 * Install dependencies with `mix deps.get`
 * Create and migrate your database with `mix ecto.setup`
 * Start Phoenix endpoint with `mix phx.server`
+
+You should see the following output in your terminal:
+
+```
+[info] Running AppWeb.Endpoint with cowboy 2.9.0 at 127.0.0.1:4000 (http)
+[debug] Downloading esbuild from https://registry.npmjs.org/esbuild-darwin-64/-/esbuild-darwin-64-0.13.5.tgz
+[info] Access AppWeb.Endpoint at http://localhost:4000
+[watch] build finished, watching for changes...
+```
+
+When you open http://localhost:4000 in your web browser,
+you should see see something similar to the following:
+
+![phoenix-framerwork-welcome-page](https://user-images.githubusercontent.com/194400/145309471-306fdd5e-324f-4c4a-bd9f-6fddbec7f512.png)
+
 
 
 
