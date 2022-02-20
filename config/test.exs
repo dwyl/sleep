@@ -8,8 +8,8 @@ import Config
 config :app, App.Repo,
   username: "postgres",
   password: "postgres",
-  database: "app_test#{System.get_env("MIX_TEST_PARTITION")}",
   hostname: "localhost",
+  database: "app_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
 
@@ -17,7 +17,7 @@ config :app, App.Repo,
 # you can enable the server option below.
 config :app, AppWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "3/NTUnmg2ROG9Tcv7V/9XtNoUvcpQ+bi/mmOhptESLHM6ZzWS3WaGMrLbKx6c1LR",
+  secret_key_base: "2OeS9YY+RJ3qEQ/8oR1AIGk5mIl5wLXCACa4nZeP0PbI0N962ucj4Gt1duce+2io",
   server: false
 
 # Print only warnings and errors during test

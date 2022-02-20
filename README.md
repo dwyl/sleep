@@ -1,20 +1,47 @@
 # sleep
 
-Sleep is the single most important activity in life. <br />
+Sleep is the single most important activity in life;
+it restores our tired bodies 
+and consolidates neural connections to help form/retain memories.
 A good night's sleep 
-can dramatically in personal effectiveness 
-in all areas of your life.
+can dramatically increase effectiveness 
+in all areas of your life. 
+Tracking your sleep times 
+and reflecting on your sleep quality
+can help you focus on this vital
+aspect of health and longevity.
 
 
 # Why?
 
-If you don't get a good night's sleep ...
+If you don't get a good night's sleep
+virtually everything about your next day
+will be worse. 
+
+See below for all the areas sleep affects.
+
 
 # What?
 
-This App 
+This App is the simplest possible sleep tracker
+(_other than using a paper notepad and pen 
+or a note taking App on your phone ..._)
+
+A deliberatly basic version of an App is
+commonly referred to as Minimum Viable Product ("MVP")
+which means it has the minimum features to be useful,
+but leaves a lot enhancements out. 
+
+If you think of a feature/improvement, _please_
+[**open an issue**!](https://github.com/dwyl/sleep/issues)
+Contributions/ideas are always welcome
+and we're delighted to extend this
+in response to feedback!
 
 # Who? 
+
+Everyone sleeps.
+
 
 # When?
 
@@ -29,114 +56,68 @@ and treat yourself to an _early_ night!
 
 # How?
 
+
+
 ## Try it!
 
 Firstly, you can try the App via Heroku:
 https://sleepdev.herokuapp.com
 
-Try: 
-+ **Log _in_**
-+ **Start** a sleep timer
-+ **Stop** the timer
-+ **Log _out_**.
-+ **Log _back in_**
-+ ***Confirm*** your "sleep" session was recorded.
+Try the following actions: 
 
++ **Log _in_**
++ **_Start_** a sleep timer
++ **Stop** the timer - to confirm that it works.
++ **Log _out_** - to confirm that no data is stored in the browser.
++ **Log _back in_** - with the same Google or GitHub account you used to login before.
++ ***Confirm*** your "sleep" session was recorded.
 
 
 ## Run it!
 
 Now that you've tried it on Heroku,
-try running the _finished_ (MVP) on your `localhost`:
+if you want to dig deeper,
+try running the _finished_ (MVP) on your computer.
 
+Open a terminal window and run the following commands:
 
-
-
-
-# _Tutorial_
-
-
-
-
-## Implementation Note
-
-We built this MVP App using using 
-[**`Elixir`**](https://github.com/dwyl/learn-elixir) 
-and 
-[**`Phoenix`**](https://github.com/dwyl/learn-phoenix-framework) 
-because it's one of the simplest ways 
-to build web applications
-from first principals.
-Our objective is to get to a _useable_ app
-as **_fast_ as possible** 
-so we can start inputting/saving data.
-You will see below, 
-that we can get up-and-running
-with a **basic interface**,
-**saving data** to the database,
-**authentication**
-and ***deployment***
-in **_less_ than 20 minutes**. <!-- <sup>1</sup> -->
-Anyone who knows basic programming 
-(e.g. `Python`, `JavaScript`, etc.)
-should be able to follow along.
-If you get stuck, 
-[please ask questions!]()
-
-<!--
-<sup>1</sup> 
-Other approaches to web app development 
-might get you different results ... 
-https://twitter.com/iamdevloper/status/787969734918668289
--->
-
-## Create New Phoenix App
-
-```sh
-mix phx.new app --no-mailer --no-dashboard
-```
-
-This creates a new Phoenix Web App named **`app`**
-without the mailer (email) or live dashboard
-but with a database and `LiveView` support.
-
-
-When you see the prompt asking you 
-to fetch and install the dependencies:
+Clone the project to your computer:
 
 ```
-Fetch and install dependencies? [Yn]
+git clone git@github.com:dwyl/sleep.git
 ```
 
-Type `y` followed by the `Enter` key:
-
-You should then see:
+Navigate to the **`sleep`** directory:
 
 ```
-* running mix deps.get
-* running mix deps.compile
+cd sleep
 ```
 
-To start the Phoenix server:
 
-* Install dependencies with `mix deps.get`
-* Create and migrate your database with `mix ecto.setup`
-* Start Phoenix endpoint with `mix phx.server`
-
-You should see the following output in your terminal:
+Install the dependencies:
 
 ```
-[info] Running AppWeb.Endpoint with cowboy 2.9.0 at 127.0.0.1:4000 (http)
-[debug] Downloading esbuild from https://registry.npmjs.org/esbuild-darwin-64/-/esbuild-darwin-64-0.13.5.tgz
-[info] Access AppWeb.Endpoint at http://localhost:4000
-[watch] build finished, watching for changes...
+mix deps.get
 ```
 
-When you open http://localhost:4000 in your web browser,
-you should see see something similar to the following:
-
-![phoenix-framerwork-welcome-page](https://user-images.githubusercontent.com/194400/145309471-306fdd5e-324f-4c4a-bd9f-6fddbec7f512.png)
 
 
 
 
+
+  [![HitCount](http://hits.dwyl.com/dwyl/sleep.svg?style=flat-square)](http://hits.dwyl.com/dwyl/sleep)
+
+
+# Research
+
+We have read several books on sleep (_so you don't have to_).
+
+
+## Why Focus on Sleep?
+
+If you aren't sleeping enough
+you will not be able to function.
+
+## How Sleep Affects You
+
+> Insert table of good vs. bad sleep.

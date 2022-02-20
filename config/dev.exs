@@ -4,8 +4,8 @@ import Config
 config :app, App.Repo,
   username: "postgres",
   password: "postgres",
-  database: "app_dev",
   hostname: "localhost",
+  database: "app_dev",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
@@ -22,7 +22,7 @@ config :app, AppWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "P98QsPutADCPf5f2YVIk4hYV3x5671vu8LY+nIoGfwYxH7h6rDm6sYf6cXnDDwzU",
+  secret_key_base: "FMt0CN3SA1QGb+x5TystE+yQE5YS75Ly0uKNfHRJGjTGHMUR9q1C70CNbgQsaIiJ",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}

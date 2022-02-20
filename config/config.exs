@@ -15,11 +15,11 @@ config :app, AppWeb.Endpoint,
   url: [host: "localhost"],
   render_errors: [view: AppWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: App.PubSub,
-  live_view: [signing_salt: "EljQ3mdd"]
+  live_view: [signing_salt: "xBrfDbtX"]
 
 # Configure esbuild (the version is required)
 config :esbuild,
-  version: "0.13.5",
+  version: "0.14.0",
   default: [
     args:
       ~w(js/app.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
