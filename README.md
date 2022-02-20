@@ -1,21 +1,35 @@
 # sleep
 
-Sleep is the single most important activity we perform in life. <br />
-A keystone activity 
+Sleep is the single most important activity in life. <br />
+A good night's sleep 
+can dramatically in personal effectiveness 
+in all areas of your life.
 
 
 # Why?
 
+If you don't get a good night's sleep ...
+
 # What?
+
+This App 
 
 # Who? 
 
 # When?
 
+You can start using this MVP _now_ (_tonight_).
+
+> If you're reading this past **22:00**,
+go straight to the "***Try it!***" section
+and treat yourself to an _early_ night!
+
 
 
 
 # How?
+
+## Try it!
 
 Firstly, you can try the App via Heroku:
 https://sleepdev.herokuapp.com
@@ -29,7 +43,19 @@ Try:
 + ***Confirm*** your "sleep" session was recorded.
 
 
+
+## Run it!
+
+Now that you've tried it on Heroku,
+try running the _finished_ (MVP) on your `localhost`:
+
+
+
+
+
 # _Tutorial_
+
+
 
 
 ## Implementation Note
@@ -50,11 +76,19 @@ with a **basic interface**,
 **saving data** to the database,
 **authentication**
 and ***deployment***
-in **_less_ than 20 minutes**.<sup>1</sup>
+in **_less_ than 20 minutes**. <!-- <sup>1</sup> -->
 Anyone who knows basic programming 
 (e.g. `Python`, `JavaScript`, etc.)
 should be able to follow along.
+If you get stuck, 
+[please ask questions!]()
 
+<!--
+<sup>1</sup> 
+Other approaches to web app development 
+might get you different results ... 
+https://twitter.com/iamdevloper/status/787969734918668289
+-->
 
 ## Create New Phoenix App
 
@@ -106,8 +140,3 @@ you should see see something similar to the following:
 
 
 
-
-<sup>1</sup> 
-Other approaches to web app development 
-might get you different results ... 
-https://twitter.com/iamdevloper/status/787969734918668289
