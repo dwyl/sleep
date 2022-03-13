@@ -16,14 +16,15 @@
 [![HitCount](http://hits.dwyl.com/dwyl/sleep.svg?style=flat-square)](http://hits.dwyl.com/dwyl/sleep)
 
 **Try it**: [**sleepdev.herokuapp.com**](https://sleepdev.herokuapp.com/)
-![wake-sleeping-heroku-app](https://liveview-chat-example.herokuapp.com/ping)
+
 </div>
 
 <br />
 
-Sleep is the single most important activity in life;
-it restores our tired bodies 
-and consolidates neural connections to help form/retain memories.
+Sleep is the cornerstone of a healthy life;
+it restores your tired body 
+and consolidates neural connections 
+to help form/retain memories.
 A good night's sleep 
 can dramatically increase effectiveness 
 in all areas of your life. 
@@ -38,10 +39,27 @@ aspect of health and longevity.
 
 When you sleep well and feel rested,
 you have mental clarity and energy 
-to focus on Deep Work tasks.
+to focus on making progress in life. <br />
 By contrast if you don't get a good night's sleep
 virtually everything about your day
 will be worse. 
+
+We wanted a simple way to: <br />
+**a)** ***Track*** our own sleep/wake time & quality.<br />
+**b)** ***Visualize*** our sleep patterns over time.<br />
+**c)** ***Share*** that data with our significant other or any other relevant person.<br />
+
+## Why Write a _Tutorial_? 💭
+
+We decided to write this as a **step-by-step tutorial**
+because it's a great opportunity
+to document the whole process of building the App.
+And it means anyone following along
+can 
+[grok](https://en.wikipedia.org/wiki/Grok)
+it 
+and even **_extend_ it**
+to add their own features.
 
 
 <br />
@@ -49,8 +67,8 @@ will be worse.
 # What? 📱 🛌
 
 This App is the simplest possible **sleep tracker**
-(_other than using a paper notepad + pen 
-or a note taking App on your phone ..._)
+(_other than using a notepad + pen 
+or a notes App on your phone ..._)
 
 A **_deliberately_ basic** version of an App is
 commonly referred to as Minimum Viable Product ("MVP")
@@ -78,8 +96,8 @@ You can start using the MVP _now_ (_tonight_)!
 > If you're reading this past **22:00**,
 go straight to the "***Try it!***" section
 and start recording your sleep _now_.
-Bookmark (⭐) the project 
-and come back to it tomorrow.
+Please bookmark (⭐) the project 
+and come back to it tomorrow when you're fresh.
 
 <br />
 
@@ -95,9 +113,9 @@ and may _extend_ it!
 
 There are 3 steps to this:
 
-1. Try it! (2 mins)
-2. Run it! (5 mins)
-3. Build it! (20 mins)
+1. _Try_ it! (2 mins)
+2. _Run_ it! (5 mins)
+3. _Build_ it! (20 mins)
 
 Let's get started.
 
@@ -105,9 +123,10 @@ Let's get started.
 
 ## 1. _Try_ it! 
 
-Firstly, if you haven't already, 
-you can _try_ the App via Heroku:
-https://sleepdev.herokuapp.com
+First, if you haven't already, 
+_try_ the App via Heroku:
+[sleepdev.herokuapp.com](https://sleepdev.herokuapp.com)
+to get a sense for the interface.
 
 # @TODO: insert GIF of _performing_ the actions!
 
@@ -143,7 +162,7 @@ https://hexdocs.pm/phoenix/installation.html
 + [x] Postgres:
 https://www.postgresql.org/download
 
-### _Check_ You Have Everything _Before_ Starting
+### _Check_ You Have Everything Ready _Before_ Starting
 
 Check you have the _latest version_ of **Elixir**
 (_run the following command in your terminal_):
@@ -190,7 +209,9 @@ postgres 529  Alex   6u  IPv4 0xbc5d729e55a89a13      0t0  TCP localhost:postgre
 This tells us that PostgreSQL is "_listening_" on TCP Port `5432`
 (_the default port_)
 
-With all those "pre-flight checks" performed, let's get _going_!
+With all those 
+[pre-flight checks](https://en.wikipedia.org/wiki/Preflight_checklist) 
+done, let's get _flying_!
 
 <br />
 
@@ -241,8 +262,8 @@ and you have a reference implementation
 that you _know_ works on your computer,
 it's time to write some **`code`**
 
-**GOTO**: 
-[https://github.com/dwyl/sleep/blob/main/tutorial.md](https://github.com/dwyl/sleep/blob/main/tutorial.md)
+## `GOTO:`  
+[`tutorial.md`](https://github.com/dwyl/sleep/blob/main/tutorial.md)
 
 <br />
 
@@ -268,3 +289,4 @@ you will not be able to function.
 > Insert table of good vs. bad sleep.
 
 -->
+![wake-sleeping-heroku-app](https://liveview-chat-example.herokuapp.com/ping)

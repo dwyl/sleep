@@ -1,27 +1,29 @@
+<div align="center">
+
 # _Tutorial_ 👩‍💻
 
-This step-by-step tutorial 
-takes you through _building_ 
+</div>
+
+This **step-by-step tutorial** 
+guides you through _building_ 
 a sleep tracking App from scratch
-so you can _understand_ how it works. <br />
-If you get stuck, _please_
-[**ask questions**!](https://github.com/dwyl/sleep/issues)
-Expect it take you around **`20 minutes`** to complete.
+so you can _understand_ how it works. 
+Expect it take around **`20 minutes`** to complete.
 Set your pomodoro timer and turn off other distractions!
 
 <br >
 
 ## Implementation Note 💡
 
-This MVP App is built using using 
+This App is built using using 
 [**`Elixir`**](https://github.com/dwyl/learn-elixir),
 [**`Phoenix`**](https://github.com/dwyl/learn-phoenix-framework) 
 and 
-[**`LiveView`**](https://github.com/dwyl/phoenix-liveview-counter-tutorial)
+[**`LiveView`**](https://github.com/dwyl/phoenix-liveview-counter-tutorial#liveview)
 because it's one of the simplest ways 
-to build web applications
+to build mobile-first responsive web applications
 from first principals.
-Our objective is to get to a _useable_ app
+Our objective is to create a _useful_ app
 as **_fast_ as possible** 
 so we can start inputting/saving data.
 You will see below, 
@@ -34,6 +36,9 @@ in **`20 minutes`**. <!-- <sup>1</sup> --> <br />
 Anyone who knows basic programming 
 (e.g. `Python`, `JavaScript`, etc.)
 should be able to follow along.
+If you are completely **new** to Phoenix or LiveView,
+we recommend starting with the more basic
+[LiveView Counter Tutorial](https://github.com/dwyl/phoenix-liveview-counter-tutorial).
 If you get stuck, please don't suffer in silence, 
 [**open an issue**!](https://github.com/dwyl/sleep/issues). <br />
 
@@ -49,6 +54,8 @@ https://twitter.com/iamdevloper/status/787969734918668289
 
 ## 1. Create a New Phoenix App 🆕
 
+In a new terminal window, run the following command:
+
 ```sh
 mix phx.new app --live --no-mailer --no-dashboard
 ```
@@ -62,7 +69,7 @@ and we don't want unused/untested code.
 When you see the prompt asking you 
 to fetch and install the dependencies:
 
-```
+```sh
 Fetch and install dependencies? [Yn]
 ```
 
@@ -70,20 +77,21 @@ Type `y` followed by the `Enter` key.
 
 You should then see:
 
-```
+```sh
 * running mix deps.get
 * running mix deps.compile
 ```
 
 To start the Phoenix server:
 
-* Install dependencies with `mix deps.get`
-* Create and migrate your database with `mix ecto.setup`
-* Start Phoenix endpoint with `mix phx.server`
++ Change working directory into the App, e.g: `cd app`
++ **Install** dependencies with `mix deps.get`
++ **Setup** the database with `mix ecto.setup`
++ **Start** the Phoenix App with `mix phx.server`
 
-You should see the following output in your terminal:
+You should see output similar to the following in your terminal:
 
-```
+```sh
 [info] Running AppWeb.Endpoint with cowboy 2.9.0 at 127.0.0.1:4000 (http)
 [debug] Downloading esbuild from https://registry.npmjs.org/esbuild-darwin-64/-/esbuild-darwin-64-0.13.5.tgz
 [info] Access AppWeb.Endpoint at http://localhost:4000
@@ -93,19 +101,16 @@ You should see the following output in your terminal:
 When you open http://localhost:4000 in your web browser,
 you should see see something similar to the following:
 
-![phoenix-framerwork-welcome-page](https://user-images.githubusercontent.com/194400/145309471-306fdd5e-324f-4c4a-bd9f-6fddbec7f512.png)
-
-
-<!-- uncomment when ready for review
-[![HitCount](http://hits.dwyl.com/dwyl/sleep_tutorial.svg?style=flat-square)](http://hits.dwyl.com/dwyl/sleep)
--->
+![phoenix-framerwork-welcome-page](https://user-images.githubusercontent.com/194400/159679120-8ffd98a2-d0c9-421e-9c15-d9b6e4004cb8.png)
 
 So far so good. 
 
+<br />
 
-#### Quick Note on App Naming Conventions 📛
+### Quick Note on App Naming Conventions 📛
 
-You will often see Phoenix apps with the name of the app in the project files
+You will often see Phoenix applications 
+with the name of the app in the project files
 e.g: in the **`Chat`** example 
 [github.com/dwyl/phoenix-chat-example](https://github.com/dwyl/phoenix-chat-example)
 
@@ -128,7 +133,7 @@ defmodule ChatWeb.Router do
 ```
 
 Having `Chat` or `ChatWeb` namespace can be useful 
-if you're working on multiple Phoenix apps _simultaneously_
+if you're working on _multiple_ Phoenix apps _simultaneously_
 and need to context switch. 
 That's why we use the `Auth` namespace 
 in our Authentication App:
@@ -153,7 +158,7 @@ we will re-use some of the code in our "main" App.
 [github.com/dwyl/app](https://github.com/dwyl/app)
 This means it's easy to 
 "lift and shift" the code & tests
-without needing to waste time with "find & replace".
+without needing to waste time with messy "find & replace".
 <br />
 
 If you prefer to namespace your app differently, go for it!
@@ -164,7 +169,9 @@ If you prefer to namespace your app differently, go for it!
 
 Open the project in your editor/IDE of choice.
 
-### Create `/live` Directory
+<br >
+
+## 2. Create `/live` Directory
 
 Since we are using Phoenix LiveView for this App,
 we need to create a new `live` directory 
@@ -173,7 +180,7 @@ with the following path:
 
 e.g: `mkdir lib/app_web/live`
 
-### Create `app_live.ex` File
+## 3. Create `app_live.ex` File
 
 Inside that newly created `/live` directory,
 create a new file called 
@@ -192,18 +199,95 @@ defmodule App.AppLive do
   end
 
   def render(assigns) do
-    AppWeb.AppView.render("messages.html", assigns)
+    AppWeb.AppView.render("index.html", assigns)
   end
 end
 ```
 
+If you attempt to compile the project now you will see a warning:
 
-### Update `router.ex`
+
+```elixir
+warning: AppWeb.AppView.render/2 is undefined 
+(module AppWeb.AppView is not available or is yet to be defined)
+  lib/app_web/live/app_live.ex:9: App.AppLive.render/1
+```
+
+## 4. Create `app_view.ex` File
+
+Create a new file with the path:
+`lib/app_web/views/app_view.ex`
+
+Insert the following code into the file:
+
+```elixir
+defmodule AppWeb.AppView do
+  use AppWeb, :view
+end
+```
+
+This just tells our new view to `use` all the code 
+in the `AppWeb` `:view` module (part of Phoenix).
+
+> If you're _curious_ how `Views` work in `Phoenix`, 
+see:
+[`guides/views.md`](https://github.com/phoenixframework/phoenix/blob/master/guides/views.md`)
 
 
-and navigate to the 
-`lib/app_web/router.ex` file.
+## 5. Edit the `index.html.heex` and `root.html.heex` Templates
 
+First **rename** the **`/page`** folder 
+as we won't be using "pages" in this project.
+
+From:
+`lib/app_web/templates/page/`
+To: 
+`lib/app_web/templates/app/`
+
+e.g:
+```sh
+mv lib/app_web/templates/page lib/app_web/templates/app
+```
+
+Then edit the template at `lib/app_web/templates/app/index.html.heex` replacing the contents with the following line:
+
+```html
+<h2>App Goes Here!</h2>
+```
+
+Finally to make the layout simpler,
+Update the `<body>` section of the 
+`lib/app_web/templates/layout/root.html.heex` 
+file to the following:
+
+```html
+<body>
+  <header>
+    <section class="container">
+      <h1>Sleep Tracker!</h1>
+    </section>
+  </header>
+  <%= @inner_content %>
+</body>
+```
+
+Don't worry, we will improve on both of these files later.
+
+
+### 6. Update `router.ex`
+
+Open the `lib/app_web/router.ex` file and 
+replace the line:
+
+```elixir
+    get "/", PageController, :index
+```
+
+With:
+
+```elixir
+    live "/", AppLive
+```
 
 
 
