@@ -305,18 +305,21 @@ you should see something similar to this:
 
 <img width="726" alt="image" src="https://user-images.githubusercontent.com/194400/159721352-7a53f510-9cce-402a-a7df-5f17e00a129a.png">
 
+The App doesn't _do_ anything yet,
+but at least we know it _renders_. 
 
+<br />
 
 ## 7. Update Tests
 
-If you attempt to run the tests in the project now:
+Following the changes we made above,
+if you attempt to run the tests in the project now:
 
 ```sh
 mix test
 ```
 
-One of the tests will fail:
-
+You will see that one of the tests fail:
 
 ```elixir
 Generated app app
@@ -331,6 +334,13 @@ Generated app app
      stacktrace:
        test/app_web/controllers/page_controller_test.exs:6: (test)
 ```
+
+It's pretty obvious _why_ the test is failing ... 
+we removed the "**Welcome to Phoenix!**" text from the template.
+
+Let's _fix_ the failing test.
+
+### 7.1 Rename the Test File
 
 First given that we won't be using 
 `controllers` in this App,
@@ -352,6 +362,8 @@ e.g:
 mv test/app_web/live/page_controller_test.exs test/app_web/live/app_live_test.exs
 ```
 
+### 7.2 Update the Test
+
 Then open the 
 `test/app_web/live/app_live_test.exs`
 file and 
@@ -369,6 +381,8 @@ defmodule AppWeb.AppLiveTest do
 end
 ```
 
+### 7.3 Re-run the Tests
+
 Now when you re-run the tests:
 
 ```sh
@@ -385,6 +399,26 @@ Finished in 0.2 seconds (0.1s async, 0.1s sync)
 
 Randomized with seed 575721
 ```
+
+
+## 8. Create Database Schema
+
+We could work on the interface first 
+and then figure out how to store data
+
+
+## X. Start a Sleep Timer
+
+## X. Stop a Running Sleep Timer
+
+## X. Display Past Timers
+
+
+
+
+## X. Authentication
+
+
 
 
 

@@ -66,17 +66,15 @@ to add their own features.
 
 # What? 📱 🛌
 
-This App is the simplest possible **sleep tracker**
-(_other than using a notepad + pen 
-or a notes App on your phone ..._)
-
+This App is the simplest possible **sleep tracker**.
+<!-- other than using a notepad + pen 
+or notes App ... -->
 A **_deliberately_ basic** version of an App is
 commonly referred to as Minimum Viable Product ("MVP")
 which means it has the minimum features to be useful,
-but leaves a lot enhancements out. 
-
+but leaves the possible enhancements out. 
 If you think of a feature/improvement, _please_
-[**open an issue**!](https://github.com/dwyl/sleep/issues). <br />
+[**open an issue**!](https://github.com/dwyl/sleep/issues).
 **Contributions/ideas** are **_always_ welcome**
 and we're delighted to extend this
 in response to feedback!
@@ -262,8 +260,7 @@ and you have a reference implementation
 that you _know_ works on your computer,
 it's time to write some **`code`**
 
-## `GOTO:`  
-[`tutorial.md`](https://github.com/dwyl/sleep/blob/main/tutorial.md)
+## `GOTO:` [`tutorial.md`](https://github.com/dwyl/sleep/blob/main/tutorial.md)
 
 <br />
 
