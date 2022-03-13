@@ -48,8 +48,8 @@ config :logger, level: :debug
 #
 # Check `Plug.SSL` for all available options in `force_ssl`.
 
-# had to add this because 
-dbssl = if System.get_env("HEROKU"), do: true, else: false
+# had to add this for Heroku
+dbssl = if System.get_env("DYNO"), do: true, else: false
 
 config :app, App.Repo,
   ssl: dbssl,
