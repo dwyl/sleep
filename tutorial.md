@@ -274,7 +274,7 @@ file to the following:
 Don't worry, we will improve on both of these files later.
 
 
-### 6. Update `router.ex`
+## 6. Update `router.ex`
 
 Open the `lib/app_web/router.ex` file and 
 replace the line:
@@ -287,6 +287,103 @@ With:
 
 ```elixir
     live "/", AppLive
+```
+
+## Checkpoint: Working LiveView App 📍
+
+At this stage,
+if you run the project:
+
+```sh
+mix phx.server
+```
+
+Open the URL http://localhost:4000 
+in your Web Browser;
+you should see something similar to this:
+
+
+<img width="726" alt="image" src="https://user-images.githubusercontent.com/194400/159721352-7a53f510-9cce-402a-a7df-5f17e00a129a.png">
+
+
+
+## 7. Update Tests
+
+If you attempt to run the tests in the project now:
+
+```sh
+mix test
+```
+
+One of the tests will fail:
+
+
+```elixir
+Generated app app
+..
+
+  1) test GET / (AppWeb.PageControllerTest)
+     test/app_web/controllers/page_controller_test.exs:4
+     Assertion with =~ failed
+     code:  assert html_response(conn, 200) =~ "Welcome to Phoenix!"
+     left:  "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<title data-suffix=\" · Phoenix Framework\">App · Phoenix Framework</title>\n    <link phx-track-static rel=\"stylesheet\" href=\"/assets/app.css\">\n    <script defer phx-track-static type=\"text/javascript\" src=\"/assets/app.js\"></script>\n  </head>\n  <body>\n    <header>\n      <section class=\"container\">\n        <h1>Sleep Tracker!</h1>\n      </section>\n    </header>\n<div data-phx-main=\"true\"> <main class=\"container\">\n  <p class=\"alert alert-info\" role=\"alert\" phx-click=\"lv:clear-flash\" phx-value-key=\"info\"></p>\n\n  <p class=\"alert alert-danger\" role=\"alert\" phx-click=\"lv:clear-flash\" phx-value-key=\"error\"></p>\n<h2>App Goes Here!</h2>\n</main></div>\n  </body>\n</html>"
+     right: "Welcome to Phoenix!"
+     stacktrace:
+       test/app_web/controllers/page_controller_test.exs:6: (test)
+```
+
+First given that we won't be using 
+`controllers` in this App,
+rename the test folder from:
+`test/app_web/controllers` to `test/app_web/live`
+
+e.g:
+```sh
+mv test/app_web/controllers test/app_web/live
+```
+
+Now rename the file
+`test/app_web/live/page_controller_test.exs`
+to
+`test/app_web/live/app_live_test.exs`
+
+e.g:
+```sh
+mv test/app_web/live/page_controller_test.exs test/app_web/live/app_live_test.exs
+```
+
+Then open the 
+`test/app_web/live/app_live_test.exs`
+file and 
+replace the entire contents 
+with the following test code:
+
+```elixir
+defmodule AppWeb.AppLiveTest do
+  use AppWeb.ConnCase
+
+  test "GET /", %{conn: conn} do
+    conn = get(conn, "/")
+    assert html_response(conn, 200) =~ "Sleep Tracker"
+  end
+end
+```
+
+Now when you re-run the tests:
+
+```sh
+mix test
+```
+
+You will see the tests pass:
+
+```sh
+...
+
+Finished in 0.2 seconds (0.1s async, 0.1s sync)
+3 tests, 0 failures
+
+Randomized with seed 575721
 ```
 
 
