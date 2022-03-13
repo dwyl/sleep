@@ -1,4 +1,4 @@
-defmodule App.AppLive do
+defmodule AppWeb.AppLive do
   use AppWeb, :live_view
 
   def mount(_params, _session, socket) do
@@ -6,6 +6,6 @@ defmodule App.AppLive do
   end
 
   def render(assigns) do
-    AppWeb.AppView.render("messages.html", assigns)
+    AppWeb.AppView.render("index.html", assigns)
   end
 end
