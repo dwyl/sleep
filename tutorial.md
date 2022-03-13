@@ -1,15 +1,19 @@
-# _Tutorial_
+# _Tutorial_ 👩‍💻
 
-This tutorial takes you through _building_ 
+This step-by-step tutorial 
+takes you through _building_ 
 a sleep tracking App from scratch
-so that you can _understand_ how it works.
+so you can _understand_ how it works. <br />
 If you get stuck, _please_
 [**ask questions**!](https://github.com/dwyl/sleep/issues)
+Expect it take you around **`20 minutes`** to complete.
+Set your pomodoro timer and turn off other distractions!
 
+<br >
 
-## Implementation Note
+## Implementation Note 💡
 
-We built this MVP App using using 
+This MVP App is built using using 
 [**`Elixir`**](https://github.com/dwyl/learn-elixir),
 [**`Phoenix`**](https://github.com/dwyl/learn-phoenix-framework) 
 and 
@@ -26,10 +30,13 @@ with a **basic interface**,
 **saving data** to the database,
 **authentication**
 and ***deployment***
-in **_less_ than 20 minutes**. <!-- <sup>1</sup> -->
+in **`20 minutes`**. <!-- <sup>1</sup> --> <br />
 Anyone who knows basic programming 
 (e.g. `Python`, `JavaScript`, etc.)
 should be able to follow along.
+If you get stuck, please don't suffer in silence, 
+[**open an issue**!](https://github.com/dwyl/sleep/issues). <br />
+
 
 
 <!--
@@ -38,8 +45,9 @@ Other approaches to web app development
 might get you different results ... 
 https://twitter.com/iamdevloper/status/787969734918668289
 -->
+<br />
 
-## 1. Create a New Phoenix App
+## 1. Create a New Phoenix App 🆕
 
 ```sh
 mix phx.new app --live --no-mailer --no-dashboard
@@ -58,7 +66,7 @@ to fetch and install the dependencies:
 Fetch and install dependencies? [Yn]
 ```
 
-Type `y` followed by the `Enter` key:
+Type `y` followed by the `Enter` key.
 
 You should then see:
 
@@ -95,7 +103,7 @@ you should see see something similar to the following:
 So far so good. 
 
 
-#### Quick Note on App Naming Conventions
+#### Quick Note on App Naming Conventions 📛
 
 You will often see Phoenix apps with the name of the app in the project files
 e.g: in the **`Chat`** example 
@@ -188,7 +196,6 @@ defmodule App.AppLive do
   end
 end
 ```
-
 
 
 ### Update `router.ex`
