@@ -1,4 +1,23 @@
-# sleep
+<div align="center">
+
+# sleep 💤
+
+![sleep-hero-image](https://user-images.githubusercontent.com/194400/159523182-0db2588a-658d-45ae-8ce3-98c37a47ca72.jpeg)
+ 
+
+### “_Sleep is the single most effective thing we can do to reset our brain and body health each day._” <br /> ~ Matthew Walker, Why We Sleep: Unlocking the Power of Sleep and Dreams
+
+<br />
+
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/dwyl/sleep/Elixir%20CI?label=build&style=flat-square)](https://github.com/dwyl/phoenix-liveview-chat-example/actions/workflows/cy.yml)
+[![codecov test coverage](https://img.shields.io/codecov/c/github/dwyl/sleep/main.svg?style=flat-square)](https://codecov.io/github/dwyl/phoenix-liveview-chat-example?branch=main)
+[![HitCount](http://hits.dwyl.com/dwyl/sleep.svg?style=flat-square&show=unique)](http://hits.dwyl.com/dwyl/sleep)
+
+**Try it**: [**sleepdev.herokuapp.com**](https://sleepdev.herokuapp.com/)
+![wake-sleeping-heroku-app](https://liveview-chat-example.herokuapp.com/ping)
+</div>
+
+<br />
 
 Sleep is the single most important activity in life;
 it restores our tired bodies 
@@ -11,17 +30,19 @@ and reflecting on your sleep quality
 can help you focus on this vital
 aspect of health and longevity.
 
+<br />
 
-# Why?
+# Why? 🤷‍♀️
 
 If you don't get a good night's sleep
 virtually everything about your next day
 will be worse. 
 
-See below for all the areas sleep affects.
+> See below for all the areas sleep affects.
 
+<br />
 
-# What?
+# What? 📱 🛌
 
 This App is the simplest possible sleep tracker
 (_other than using a paper notepad and pen 
@@ -34,33 +55,42 @@ but leaves a lot enhancements out.
 
 If you think of a feature/improvement, _please_
 [**open an issue**!](https://github.com/dwyl/sleep/issues)
-Contributions/ideas are always welcome
+**Contributions/ideas** are **_always_ welcome**
 and we're delighted to extend this
 in response to feedback!
 
-# Who? 
+<br />
 
-Everyone sleeps.
+# Who? 👤
 
+_Everyone_ that sleeps.
 
-# When?
+<br />
 
-You can start using this MVP _now_ (_tonight_).
+# When? 🕗
+
+You can start using the MVP _now_ (_tonight_)!
 
 > If you're reading this past **22:00**,
 go straight to the "***Try it!***" section
 and treat yourself to an _early_ night!
+Bookmark (⭐) the project 
+and come back to it tomorrow
 
+<br />
 
+It's never too late 
+to start focusing on your sleep quality.
 
 
 # How?
 
 
 
-## Try it!
+## _Try_ it! 
 
-Firstly, you can try the App via Heroku:
+Firstly, if you haven't already, 
+you can _try_ the App via Heroku:
 https://sleepdev.herokuapp.com
 
 Try the following actions: 
@@ -73,7 +103,7 @@ Try the following actions:
 + ***Confirm*** your "sleep" session was recorded.
 
 
-## Run it!
+## _Run_ it! 
 
 Now that you've tried it on Heroku,
 if you want to dig deeper,
@@ -100,18 +130,22 @@ Install the dependencies:
 mix deps.get
 ```
 
+_Run_ the app:
+
+```
+mix phx.server
+```
 
 
 
-
-
-  [![HitCount](http://hits.dwyl.com/dwyl/sleep.svg?style=flat-square)](http://hits.dwyl.com/dwyl/sleep)
 
 
 # Research
 
 We have read several books on sleep (_so you don't have to_).
 
+
+### “_Before you sleep, read something that is exquisite, and worth remembering._” ~ <br /> Desiderius Erasmus
 
 ## Why Focus on Sleep?
 

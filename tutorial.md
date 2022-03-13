@@ -1,7 +1,8 @@
 # _Tutorial_
 
-This tutorial takes you through _building_ a sleep tracking App from scratch
-so that you can understand how it works.
+This tutorial takes you through _building_ 
+a sleep tracking App from scratch
+so that you can _understand_ how it works.
 If you get stuck, _please_
 [**ask questions**!](https://github.com/dwyl/sleep/issues)
 
@@ -9,9 +10,10 @@ If you get stuck, _please_
 ## Implementation Note
 
 We built this MVP App using using 
-[**`Elixir`**](https://github.com/dwyl/learn-elixir) 
-and 
+[**`Elixir`**](https://github.com/dwyl/learn-elixir),
 [**`Phoenix`**](https://github.com/dwyl/learn-phoenix-framework) 
+and 
+[**`LiveView`**](https://github.com/dwyl/phoenix-liveview-counter-tutorial)
 because it's one of the simplest ways 
 to build web applications
 from first principals.
@@ -37,16 +39,17 @@ might get you different results ...
 https://twitter.com/iamdevloper/status/787969734918668289
 -->
 
-## Create New Phoenix App
+## 1. Create a New Phoenix App
 
 ```sh
-mix phx.new app --no-mailer --no-dashboard
+mix phx.new app --live --no-mailer --no-dashboard
 ```
 
 This creates a new Phoenix Web App named **`app`**
-without the mailer (email) or live dashboard
-but with a database and `LiveView` support.
-
+with everything setup for `LiveView` support
+but  without the mailer (email) or live dashboard
+cause we won't be needing either of those features
+and we don't want unused/untested code.
 
 When you see the prompt asking you 
 to fetch and install the dependencies:
@@ -117,7 +120,7 @@ defmodule ChatWeb.Router do
 ```
 
 Having `Chat` or `ChatWeb` namespace can be useful 
-if you're working on multiple Phoenix apps simultaneously 
+if you're working on multiple Phoenix apps _simultaneously_
 and need to context switch. 
 That's why we use the `Auth` namespace 
 in our Authentication App:
@@ -133,7 +136,10 @@ defmodule AuthWeb.AuthController do
 
 The reasons why _this_ app is namespaced **`App`** are: <br />
 **a)** It's less to type and still provides clarity/context.<br />
-**b)** <br />
+**b)** The word "sleep" has a special significance in Erlang/Elixir
+see: [`sleep/1`](https://www.erlang.org/doc/man/timer.html#sleep-1)
+so we don't want our IDE constantly suggesting that we 
+suspend the process ... <br />
 **c)** If we _succeed_ in building a sleep-tracking app, 
 we will re-use some of the code in our "main" App. 
 [github.com/dwyl/app](https://github.com/dwyl/app)
@@ -142,7 +148,9 @@ This means it's easy to
 without needing to waste time with "find & replace".
 <br />
 
-If you prefer to namespace your app differently, go for it!s
+If you prefer to namespace your app differently, go for it!
+
+<br />
 
 ## Show Me the Code! 👩‍💻
 
@@ -155,13 +163,17 @@ we need to create a new `live` directory
 with the following path:
 `lib/app_web/live`
 
+e.g: `mkdir lib/app_web/live`
+
 ### Create `app_live.ex` File
 
 Inside that newly created `/live` directory,
 create a new file called 
 `app_live.ex` 
-with the path:
+so the file path is:
 `lib/app_web/live/app_live.ex`
+
+_Type_ the following code in the file:
 
 ```elixir
 defmodule App.AppLive do
@@ -178,8 +190,14 @@ end
 ```
 
 
+
 ### Update `router.ex`
+
 
 and navigate to the 
 `lib/app_web/router.ex` file.
 
+
+
+
+[![HitCount](http://hits.dwyl.com/dwyl/sleep-tutorial.svg?style=flat-square)](http://hits.dwyl.com/dwyl/sleep)
