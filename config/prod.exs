@@ -51,7 +51,7 @@ config :logger, level: :debug
 # had to add this because 
 dbssl = if System.get_env("HEROKU"), do: true, else: false
 
-config :auth, Auth.Repo,
+config :app, App.Repo,
   ssl: dbssl,
   url: System.get_env("DATABASE_URL"),
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
