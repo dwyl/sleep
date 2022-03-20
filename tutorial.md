@@ -9,7 +9,9 @@ guides you through _building_
 a sleep tracking App from scratch
 so you can _understand_ how it works. 
 Expect it take around **`20 minutes`** to complete.
-Set your pomodoro timer and turn off other distractions!
+Set your 
+[pomodoro](https://en.wikipedia.org/wiki/Pomodoro_Technique) 
+timer and turn off other distractions!
 
 <br >
 
@@ -31,10 +33,10 @@ that we can get up-and-running
 with a **basic interface**,
 **saving data** to the database,
 **authentication**
-and ***deployment***
+and ***testing***
 in **`20 minutes`**. <!-- <sup>1</sup> --> <br />
 Anyone who knows basic programming 
-(e.g. `Python`, `JavaScript`, etc.)
+(e.g. `JavaScript`, `PHP`, `Python`, `Ruby`, etc.)
 should be able to follow along.
 If you are completely **new** to Phoenix or LiveView,
 we recommend starting with the more basic
@@ -50,6 +52,27 @@ Other approaches to web app development
 might get you different results ... 
 https://twitter.com/iamdevloper/status/787969734918668289
 -->
+<br />
+
+## Before You Start
+
+Check you have the **latest** version of **Phoenix**,
+run the following command in your terminal window:
+
+```sh
+mix phx.new -v
+```
+
+You should see:
+
+```sh
+Phoenix v1.6.6
+```
+
+If not, install it now:
+https://hexdocs.pm/phoenix/installation.html
+
+
 <br />
 
 ## 1. Create a New Phoenix App 🆕
@@ -400,26 +423,188 @@ Finished in 0.2 seconds (0.1s async, 0.1s sync)
 Randomized with seed 575721
 ```
 
+<br />
 
-## 8. Create Database Schema
+## 8. Test Coverage + Quick Tidy-up
 
-We could work on the interface first 
-and then figure out how to store data
+> This is a  **100% optional `3 minute`** 
+[Sidequest](https://en.wiktionary.org/wiki/sidequest).
+If you speed-run it,
+you can easily do it in a **`2 mins`**.
+But if you prefer to skip head 
+and continue with the tutorial,
+scroll down to Step 9 below.
 
+<br />
+
+### _Why_ Test Coverage?
+
+When building software projects 
+we try to ensure that all files are tested
+and if we cannot test them, 
+we want to know _why_.
+
+This has **_multiple_ benefits** including:
+
+1. **Assurance** that code we write is tested 
+which reduces undesired behaviour (bugs).
+2. **Warning** when new (_untested_) code is introduced 
+because the coverage level decreases.
+3. **Understanding** the parts of the Phoenix Web Framework
+and uncover any "magic".
+
+Let's crack on!
+
+<br />
+
+### Add `ExCoveralls` to the Dependencies
+
+Open the `mix.exs` file, 
+locate the `defp deps do` block and 
+add the following lines to the list:
+
+```elixir
+# Check test coverage: https://github.com/parroty/excoveralls
+{:excoveralls, "~> 0.14.3", only: :test},
+```
+
+Next in the `def project do` section of `mix.exs`,
+add the lines to the list:
+
+```elixir
+test_coverage: [tool: ExCoveralls],
+preferred_cli_env: [
+  coveralls: :test,
+  "coveralls.detail": :test,
+  "coveralls.post": :test,
+  "coveralls.html": :test,
+  "coveralls.json": :test
+],
+```
+
+After saving the the `mix.exs` file,
+download the dependencies:
+
+```sh
+mix deps.get
+```
+
+Once the dependencies are downloaded,
+run the tests with coverage 
+by executing the command:
+
+### Run the 
+
+```sh
+mix coveralls.html
+```
+
+
+```sh
+open ./cover/excoveralls.html
+```
+
+
+
+There are several auto-generated
+files when you create a Phoenix project.
+These are necessary for the project to function
+but are 
+
+
+
+Create a new file 
+in the root of your project
+called `coveralls.json` 
+and paste the following code in:
+
+```json
+{
+  "coverage_options": {
+    "minimum_coverage": 100
+  },
+  "skip_files": [
+    "test/",
+    "lib/app/application.ex",
+    "lib/app/release.ex",
+    "lib/app_web.ex",
+    "lib/app_web/views/error_helpers.ex",
+    "lib/app_web/channels/user_socket.ex",
+    "lib/app_web/telemetry.ex"
+  ]
+}
+```
+
+
+
+
+### Ignore Phoenix Files We Cannot Test
+
+The files we cannot test, we ignore for coverage purposes.
+
+
+
+
+
+
+<br />
+
+## 9. Create Database Schema
+
+Our next step is to think about the data 
+we want to store for our Sleep Tracking App. 
+
+> **Note**: Some people prefer to work on 
+the _interface_ of an App first 
+and then figure out how to store data.
+We prefer to think about the _data_
+an App is going to capture/use _first_
+as it's the "easy" part.
+
+> To understand _why_, watch 
+"Make Data Structures" by Richard Feldman: 
+https://youtu.be/x1FU3e0sT1I
+
+
+
+
+
+# Continue
+
+/Users/n/code/phoenix-liveview-chat-example
+https://github.com/dwyl/sleep/blob/basic-sleep-app-issue-%2353/
+https://github.com/dwyl/sleep/blob/basic-sleep-app-issue-%2353/tutorial.md
+
+
+<br />
 
 ## X. Start a Sleep Timer
 
+
+
+<br />
+
 ## X. Stop a Running Sleep Timer
+
+<br />
 
 ## X. Display Past Timers
 
-
+<br />
 
 
 ## X. Authentication
 
 
 
+<br />
+
+## X. 
+
 
 
 [![HitCount](http://hits.dwyl.com/dwyl/sleep-tutorial.svg?style=flat-square)](http://hits.dwyl.com/dwyl/sleep)
+
+See:
+[`Phoenix.LiveViewTest`](https://hexdocs.pm/phoenix_live_view/Phoenix.LiveViewTest.html)
+for more info on testing and LiveView.

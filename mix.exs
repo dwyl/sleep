@@ -59,7 +59,7 @@ defmodule App.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
 
-      # Check test coverage
+      # Check test coverage: https://github.com/parroty/excoveralls
       {:excoveralls, "~> 0.14.3", only: :test},
 
       # Create Documentation for publishing Hex.docs:

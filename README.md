@@ -155,8 +155,6 @@ Make sure you have the following installed:
 
 + [x] Elixir:
 https://elixir-lang.org/install.html
-+ [x] Phoenix:
-https://hexdocs.pm/phoenix/installation.html
 + [x] Postgres:
 https://www.postgresql.org/download
 
@@ -177,18 +175,6 @@ Erlang/OTP 24 [erts-12.1.2] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-t
 Elixir 1.13 (compiled with Erlang/OTP 22)
 ```
 
-Check you have the **latest** version of **Phoenix**:
-
-```sh
-mix phx.new -v
-```
-
-You should see:
-
-```sh
-Phoenix v1.6.6
-```
-
 _Confirm_ **PostgreSQL** is running (_so the App can store chat messages_)
 run the following command:
 
@@ -204,8 +190,11 @@ postgres 529  Alex   5u  IPv6 0xbc5d729e529f062b      0t0  TCP localhost:postgre
 postgres 529  Alex   6u  IPv4 0xbc5d729e55a89a13      0t0  TCP localhost:postgresql (LISTEN)
 ```
 
-This tells us that PostgreSQL is "_listening_" on TCP Port `5432`
-(_the default port_)
+This tells us that `postgresql` 
+is "_listening_" on TCP Port `5432`
+(_the default port_).
+If Postgres is not running,
+check the docs for you OS.
 
 With all those 
 [pre-flight checks](https://en.wikipedia.org/wiki/Preflight_checklist) 

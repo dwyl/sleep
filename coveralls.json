@@ -4,11 +4,11 @@
   },
   "skip_files": [
     "test/",
-    "lib/auth/application.ex",
-    "lib/auth/release.ex",
-    "lib/auth_web.ex",
-    "lib/auth_web/views/error_helpers.ex",
-    "lib/auth_web/channels/user_socket.ex",
-    "lib/auth_web/telemetry.ex"
+    "lib/app/application.ex",
+    "lib/app/release.ex",
+    "lib/app_web.ex",
+    "lib/app_web/views/error_helpers.ex",
+    "lib/app_web/channels/user_socket.ex",
+    "lib/app_web/telemetry.ex"
   ]
 }
